@@ -69,6 +69,11 @@ class General extends React.PureComponent<Props, State> {
     setFont(settings);
   }
 
+  async _handleOmitHTTPHeadersChange(el: SyntheticEvent<HTMLInputElement>) {
+    const settings = await this._handleUpdateSetting(el);
+    setFont(settings);
+  }
+
   async _handleFontSizeChange(el: SyntheticEvent<HTMLInputElement>) {
     const settings = await this._handleUpdateSetting(el);
     setFont(settings);
@@ -205,6 +210,18 @@ class General extends React.PureComponent<Props, State> {
               name="fontVariantLigatures"
               checked={settings.fontVariantLigatures}
               onChange={this._handleFontLigatureChange}
+            />
+          </label>
+        </div>
+
+        <div className="form-control form-control--thin">
+          <label className="inline-block">
+            Omit HTTP headers
+            <input
+              type="checkbox"
+              name="omitHTTPHeaders"
+              checked={settings.omitHTTPHeaders}
+              onChange={this._handleOmitHTTPHeadersChange}
             />
           </label>
         </div>

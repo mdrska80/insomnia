@@ -34,6 +34,7 @@ type BaseSettings = {
   fontInterface: string | null,
   fontSize: number,
   fontVariantLigatures: boolean,
+  omitHTTPHeaders: boolean,
 };
 
 export type Settings = BaseModel & BaseSettings;
@@ -75,6 +76,7 @@ export function init(): BaseSettings {
     fontInterface: null,
     fontSize: 13,
     fontVariantLigatures: false,
+    omitHTTPHeaders: false,
   };
 }
 
